@@ -10,14 +10,14 @@ CREATE TABLE Employees (
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     gender VARCHAR(10),
-    hire_date DATE,
+    hire_date DATE NOT NULL,
     PRIMARY KEY(emp_no)
 );
 
 CREATE TABLE Dept_Manager (
     dept_no VARCHAR(30) NOT NULL,
     emp_no INT NOT NULL,
-    from_date DATE,
+    from_date DATE NOT NULL,
     to_date DATE,
     FOREIGN KEY (dept_no) REFERENCES Departments(dept_no),
     FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
@@ -26,7 +26,7 @@ CREATE TABLE Dept_Manager (
 CREATE TABLE Dept_Emp (
     emp_no INT NOT NULL,
     dept_no VARCHAR(30) NOT NULL,
-    from_date DATE,
+    from_date DATE NOT NULL,
     to_date DATE,
     FOREIGN KEY (dept_no) REFERENCES Departments(dept_no),
     FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
@@ -35,7 +35,7 @@ CREATE TABLE Dept_Emp (
 CREATE TABLE Titles (
     emp_no INT NOT NULL,
     title VARCHAR(30) NOT NULL,
-    from_date DATE,
+    from_date DATE NOT NULL,
     to_date DATE,
     FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
 );
@@ -43,7 +43,7 @@ CREATE TABLE Titles (
 CREATE TABLE Salaries (
     emp_no INT NOT NULL,
     salary INT NOT NULL,
-    from_date DATE,
+    from_date DATE NOT NULL,
     to_date DATE,
     FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
 );

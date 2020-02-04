@@ -24,8 +24,8 @@ CREATE TABLE Dept_Manager (
 );
 
 CREATE TABLE Dept_Emp (
-    dept_no VARCHAR(30) NOT NULL,
     emp_no INT NOT NULL,
+    dept_no VARCHAR(30) NOT NULL,
     from_date DATE,
     to_date DATE,
     FOREIGN KEY (dept_no) REFERENCES Departments(dept_no),
